@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="stylesheet.css">
+        <title>My Dashboard</title>
+    </head>
+    <body>
+        <div id="changeUserScreen">
+            <h1>Select a sample user</h1>
+            <hr>
+            <div id="userAccounts">
+                <div class="userAccountDiv" id="coderVersion" onClick="selectAccount(id)">
+                    <img src="dashboardImages/laptop.png" class="userIcon">
+                    <h2>Programmer</h2>
+                </div>
+                <div class="userAccountDiv" id="studentVersion" onClick="selectAccount(id)">
+                    <img src="dashboardImages/graduate-cap-2.png" class="userIcon">
+                    <h2>Student</h2>
+                </div>
+                <div class="userAccountDiv" id="teacherVersion" onClick="selectAccount(id)">
+                    <img src="dashboardImages/shiny-apple.png" class="userIcon">
+                    <h2>Teacher</h2>
+                </div>
+            </div>
+            <button id="" onClick="toggleChangeUserScreen('off')">Close</button>
+        </div>
+        <div id="newComponentModal">
+            <div id="newComponentSelectScreen">
+                <h1>Edit the Dashboard</h1>
+                <h4>Create a new component</h4>
+                <button id="" onClick="switchModalScreens('link')">New Link...</button><br>
+                <button id="" onClick="switchModalScreens('countdown')">New Countdown...</button><br>
+                <button id="" onClick="createNewMemoComponent()">New Memo Pad</button><br>
+                <hr>
+                <h4>Toggle universal components</h4>
+                <button id="websterToggle" onClick="toggleUniversalComponent('webster')">Webster Search</button>
+                <button id="youTubeToggle" onClick="toggleUniversalComponent('youtube')">YouTube Search</button>
+                <button id="googleToggle" onClick="toggleUniversalComponent('google')">Google Search</button>
+                <button id="latinToggle" onClick="toggleUniversalComponent('latin')">Latin Dictionary</button>
+                <button id="latinNounsToggle" onClick="toggleUniversalComponent('latinNouns')">Latin Nouns</button>
+                <button id="latinVerbsToggle" onClick="toggleUniversalComponent('latinVerbs')">Latin Verbs</button>
+                <button id="periodicToggle" onClick="toggleUniversalComponent('periodicTable')">Periodic Table</button>
+                <button id="jeopardyToggle" onClick="toggleUniversalComponent('jeopardy')">Jeopardy</button>
+                <button id="notepaperToggle" onClick="toggleUniversalComponent('notepaper')">Notepaper</button>
+                <hr>
+                <button id="" onClick="toggleComponentModal('off')">Cancel</button>
+            </div>           
+            
+            <div id="newLinkComponentScreen">
+                <h1>Create a new link</h1>
+                <br>
+                <form>
+                <label for="linkModalLinkToAdd">Web Address:</label>
+                <br>
+                <input type="url" id="linkModalLinkToAdd" name="linkModalLinkToAdd" placeholder="www.google.com" required> 
+                <br>
+                <br>
+                <br>
+                <label for="linkModalLabelToAdd">Button label:</label>
+                <br>
+                <input type="text" id="linkModalLabelToAdd" name="linkModalLabelToAdd" placeholder="My Attendance">
+                <br>
+                <br>
+                <button onClick="switchModalScreens('select')">Go back</button>
+                <button onClick="createNewLinkComponent()">Add to dashboard</button>
+                </form>
+            </div>
+            
+            <div id="newCountdownComponentScreen">
+                <h1>Create a new countdown</h1>                
+                <br>
+                <br>
+                <label for="countdownEventToAdd">Counting down to...</label> <br>
+                <input type="text" id="countdownEventToAdd" name="countdownEventToAdd" placeholder=" Christmas!"> 
+                <br>
+                <br>
+                <br>
+                <label for="linkModalLabelToAdd">Date:</label>
+                <input type="date" id="countdownDateToAdd" name="countdownDateToAdd" placeholder=" 2025/12/25">
+                <br>
+                <br>
+            <button onClick="switchModalScreens('select')">Go back</button>
+            <button onClick="createNewCountdownComponent()">Add to dashboard</button>
+            </div>
+        </div>
+        <header>
+            <h1 id="headerName"><span id="dashboardUserName">Teacher</span>'s Dashboard</h1>
+            <button id="headerAccountButton" onClick="toggleChangeUserScreen('on')">Select <br>Account</button>
+        </header>
+        <div>
+            <h1 id="dateAndTime">Date goes here</h1>
+        </div>
+        <hr>
+        <main id="dashboardButtons">
+            <!-- "updateTheWholeDashboard()" writes stuff here -->
+        </main>
+        <hr>
+        <button id="editDashboardButton" onClick="toggleComponentModal('on')">Edit Dashboard...</button>
+        <!-- <button onClick="consoleLogUserData()">DEBUG: Console log User Data</button> -->
+        <script src="scripts.js"></script>    
+    </body>
+</html>
